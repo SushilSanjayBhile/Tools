@@ -1,0 +1,15 @@
+Problems I faced while working with docker:-
+
+1) Any docker command was asking me sudo previllege.
+=> cmd 1) compgen -g  (Check if docker group is present or not)
+
+      if docker group is not present
+   cmd 2.1) sudo groupadd docker
+      else
+   cmd 2.2) DO NOTHING
+
+   cmd 3) sudo gpasswd -a $USER docker (specify which user is using docker commands)
+
+   cmd 4) newgrp docker (to reinstantiate env or simply logout and login)
+
+   Now you should be able to use docker commands without sudo
