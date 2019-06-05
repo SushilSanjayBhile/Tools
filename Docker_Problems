@@ -13,3 +13,9 @@ Problems I faced while working with docker:-
    cmd 4) newgrp docker (to reinstantiate env or simply logout and login)
 
    Now you should be able to use docker commands without sudo
+
+
+2) unable to install anything using Dockerfile
+=> use -y flag in install command
+
+	ex) RUN apt-get install -y git
