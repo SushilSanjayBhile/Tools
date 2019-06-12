@@ -1,13 +1,36 @@
-1) docker built -t ubuntu_16 .							{==> build a docker image from a dockerfile}
-2) docker run --name dockerContainerNewName -ti imageID /bin/bash		{==> create a container from image and give a name}
-3) docker start containerID							{==> start docker}
-4) docker stop containerID	{==> stop docker}
-5) docker exec -ti containerID /bin/bash	{==> execute or go inside started container}
-6) docker search ubu	{==> search for docker image online}
-7) docker images	{==> list docker images present on your machines}
-8) docker ps [-a]	{==> list running or exited dockers}
-9) docker rm containerID	{==> remove docker container}
-10) docker rmi imageID	{==> remove docker image}
-11) doker export containerID > name.tar.gz	{==> create a tar backup of container}
-12) docker pull imageName	{==> pull image from online docker store}
-13) docker commit containerId imageName	{==> commit container and creates new updated image. use is that new cotainer created from this docker image will be updated}
+1) docker built -t ubuntu_16 .				{==> build a docker image from a dockerfile}
+2) docker run -ti imageID /bin/bash			{==> create a container from image}
+3) docker start containerID				{==> start docker}
+4) docker stop containerID				{==> stop docker}
+5) docker exec -ti containerID /bin/bash		{==> execute or go inside started container}
+6) docker search ubu					{==> search for docker image online}
+7) docker images					{==> list docker images present on your machines}
+8) docker ps [-a]					{==> list running or exited dockers}
+9) docker rm containerID				{==> remove docker container}
+10) docker rmi imageID					{==> remove docker image}
+11) doker export containerID > name.tar.gz		{==> create a tar backup of container}
+12) docker pull imageName				{==> pull image from online docker store}
+13) docker commit containerId imageName			{==> commit container and creates new updated image. 
+								use is that new cotainer created from this 
+								docker image will be updated}
+
+
+
+Flags:-
+
+1) docker run -p host:docker -ti imageID /bin/bash
+=> specify port to access docker process while creating container
+	eg) docker run -p 4000:80 -ti 1a9276aazxc /bin/bash
+
+2) docker run -v hostADDR:DockerADDR
+=>to copy from/to docker create a shared path while creating container from image
+	eg) docker run -v home/hostName/SharedFolder:/home/Docker/SharedFolder -it 7as724312ndfh /bin/bash
+
+3) docker run --name DockerContainerName -ti imageID /bin/bash
+=>create docker container from imgae with specified name while creating container from docker image
+	eg) docker run --name faceRecog -ti 6adsg123qwe /bin/bash
+
+4) docker run -d imageId /bin/bash
+=> create a container in dettached mode while runs it in background
+	eg) docker run -d 7uvfs6ds4sd /bin/bash
+
