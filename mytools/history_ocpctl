@@ -1,0 +1,1000 @@
+  13  kgp --all-namespaces
+   14  kubectl delete -f rc-nginx.json 
+   15  kubectl get rc -o wide 
+   16  kubectl get rc -o wide  --all-naemspaces
+   17  kubectl get rc -o wide  --all-namespaces
+   18  kubectl get svc 
+   19  kubectl get svc  --all-namespaces
+   20  dcs
+   21  for i in {1..60} ; do kubectl delete -f rc-nginx.json -n ns$i; done
+   22  dcs
+   23  dsc
+   24  dcs
+   25  vi rc-nginx.json 
+   26  cp rc-nginx.json rc-nginx-new.json 
+   27  vi rc-nginx-new.json
+   28  kubectl create -f rc-nginx-new.json 
+   29  kgp 
+   30  kubectl describe pod nginx-p5hbr
+   31  kubectl delete  -f rc-nginx-new.json 
+   32  vi rc-nginx-new.json
+   33  kubectl create -f rc-nginx-new.json 
+   34  kgp
+   35  for i in {1..60} ; do kubectl -f rc-nginx-new.json -n ns$i; done
+   36  for i in {1..60} ; do kubectl create -f rc-nginx-new.json -n ns$i; done
+   37  dcs
+   38  dctl network list
+   39  dcs
+   40  ssh diamanti@bosserv22
+   41  dcs
+   42  kubectl get svc  --all-namespaces
+   43  kubectl get pod -o wide --all-namespaces 
+   44  dcs
+   45  kubectl get pod -o wide --all-namespaces  | grep bosserv22
+   46  dcs
+   47  kubectl get pod -o wide --all-namespaces  | grep bosserv22
+   48  dctl event list -p nginx-vlk2g -n ns15
+   49  dctl event list -p nginx-vlk2g
+   50  dctl event list | grep nginx-vlk2g
+   51  dctl event list | grep bosserv22
+   52  dctl event list 
+   53  dcs
+   54  kgp
+   55  kgp --all-namespaces
+   56  kgp --all-namespaces | grep bosserv22
+   57  dcs
+   58  ipmitool -H 172.16.250.7 -U admin -P admin1 chassis power status
+   59  ipmitool -H 172.16.250.7 -U admin -P admin1 chassis power on
+   60  dcs
+   61  kgp --all-namespaces | grep bosserv22
+   62  kgp --all-namespaces
+   63  dcs
+   64  dcs
+   65  kgp
+   66  kgp --all-namespaes
+   67  kgp --all-namespaces
+   68  ls
+   69  dcs
+   70  kubectl get rc --all-namespaces
+   71  tmux a -t bharati
+   72  ssh diamanti@bosserv26
+   73  ssh diamanti@bosserv27
+   74  dcs
+   75  kgp --all-namespaces
+   76  kubectl get rc --all-namespaces | wc -l 
+   77  kubectl get rc --all-namespaces 
+   78  kgp 
+   79  dcs
+   80  kgp -o wide --all-namespaces | grep bosserv20
+   81  ssh diamanti@bosserv20
+   82  bi .bashrc 
+   83  vi .bashrc 
+   84  podEnter nginx-cjt4v 
+   85  podEnter nginx-cjt4v  -n ns11
+   86  podEnter nginx-cjt4v  -namespace ns11
+   87  podEnter nginx-cjt4v  --namespace ns11
+   88  kubectl exec -ti nginx-cjt4v /bin/bash -ns ns11
+   89  vi .bashrc 
+   90  kgpa
+   91  podEnter nginx-cjt4v 
+   92  podEnter nginx-cjt4v  --ns ns11
+   93  podEnter prometheus-v1-2
+   94  podEnter prometheus-v1-2 -n diamanti-system
+   95  kubectl describe pod nginx-cjt4v -n ns11
+   96  kubectl exec -ti nginx-cjt4v /bin/bash 
+   97  kubectl exec -ti nginx-cjt4v /bin/bash  -n ns11
+   98  dcs
+   99  dctl volume create -help 
+  100  dctl volume cretae testvol -m 3 --sel zone=zone1
+  101  dctl volume create testvol -m 3 --sel zone=zone1
+  102  dvl
+  103  dctl volume describe testvol
+  104  dvl
+  105  dctl volume attach  -help
+  106  dctl volume attach testvol --node node
+  107  dvl
+  108  delVol
+  109  dctl volume create testvol1 -m 3
+  110  dvl
+  111  dcs
+  112  dctl volume create testvol2 --sel zone-zone1
+  113  ddvl
+  114  dvl
+  115  dctl volume create testvol3 --sel zone=zone1
+  116  dvl
+  117  dcs
+  118  dctl volume create -help 
+  119  dvl
+  120  dctl volume create testvol4 --sel failure-domain.beta.kubernetes.io/zone=zone1
+  121  dvl
+  122  dctl volume create testvol5 -m 3 --sel failure-domain.beta.kubernetes.io/zone=zone1
+  123  dvl
+  124  delVol
+  125  dvl
+  126  dcs
+  127  cd diamanti@bosserv20
+  128  ssh diamanti@bosserv20
+  129  ls
+  130  cd tanya/
+  131  ls
+  132  cd ..
+  133  cd demo/
+  134  ls
+  135  cd storage/
+  136  ls
+  137  cd bulk/
+  138  ls
+  139  cd ..
+  140  ls
+  141  cd ..
+  142  ls
+  143  vi commands.sh 
+  144  cd storage/
+  145  ls
+  146  vi podspec-mirrored.json
+  147  ssh diamanti@bosserv20
+  148  ls
+  149  cd 
+  150  ls
+  151  vi fio-rc-spec1.json 
+  152  ssh diamanti@bosserv20
+  153  cat fio-rc-spec1.json | grep fio-rw
+  154  cat fio-rc-spec1.json | grep fio-rs
+  155  cat fio-rc-spec1.json | grep fio-col
+  156  cat fio-rc-spec1.json | grep fio-vol
+  157  cat fio-rc-spec1.json | grep vol
+  158  kubectl create -f fio-rc-spec1.json 
+  159  kgp
+  160  kubectl create volume fio-rs-vol1 
+  161  kubectl volume create fio-rs-vol1 
+  162  dctl volume create fio-rs-vol1 
+  163  kgp
+  164  kubectl describe pod fio-rs1-pmqkt 
+  165  kgp -o wdie
+  166  kgp -o wide
+  167  dvl
+  168  kgp -o wide
+  169  vi fio-rc-spec1.json 
+  170  dcs
+  171  kubectl delete -f fio-rc-spec1.json 
+  172  dvl 
+  173  delVol
+  174  dctl volume create fio-rs-vol1 --sel node=node2
+  175  dvl
+  176  kubectl create -f fio-rc-spec1.json 
+  177  kgp -o wide
+  178  kubectl delete -f fio-rc-spec1.json 
+  179  vi fio-rc-spec1.json 
+  180  kubectl create -f fio-rc-spec1.json 
+  181  dcs
+  182  kgp -o wide
+  183  dvl
+  184  dctl node --help\
+  185  dctl node --help
+  186  dctl node label
+  187  kubectl get rc 
+  188  kubectl get rc  -o wide
+  189  ssh diamanti@bosserv23
+  190  dcs
+  191  kgp
+  192  dcs
+  193  kgp
+  194  kgp -o wide 
+  195  dcs
+  196  kgp -o wide 
+  197  dcs
+  198  kgp -o wide 
+  199  DCS
+  200  dcs
+  201  kgp -o wide 
+  202  dctl node label
+  203  dctl node label bosserv21 node=node3
+  204  kgp
+  205  ipmitool -H 172.16.250.9 -U admin -P admin1 chassis power status
+  206  ipmitool -H 172.16.250.9 -U admin -P admin1 chassis power on
+  207  dcs
+  208  ds
+  209  dcs
+  210  kubectl delete rc --all-namespaces
+  211  kubectl delete rc --all-namespace
+  212  dcs
+  213  kubect delete -f fio-rc-spec1.json 
+  214  dctl -v
+  215  vi .bashrc 
+  216  ls
+  217  dcs
+  218  kgp 
+  219  kubectl delete rc --all
+  220  kubectl delete rc --all --all-namespaces
+  221  kubectl get rc --all-namespaces
+  222  kubectl  rc --all-namespaces
+  223  kubectl delete rc --all-namespaces
+  224  kubectl delete rc  --all --all-namespaces
+  225  kubectl get rc --all-namespaces
+  226  dcs
+  227  for i in {1..60}; do  kubectl delete rc --all -n ns$i; done
+  228  kgp --all-namespaces
+  229  dvl
+  230  delVol
+  231  dcs
+  232  dvl
+  233  dcs
+  234  ssh diamanti@bosserv20
+  235  dcs
+  236  dcs
+  237  dvl
+  238  kgpa
+  239  dcs
+  240  dctl feature list
+  241  ssh diamanti@bosserv20
+  242  ssh diamanti@bosserv22
+  243  ssh diamanti@bosserv21
+  244  ssh diamanti@bosserv27
+  245  ssh diamanti@bosserv26
+  246  ssh diamanti@bosserv27
+  247  ssh diamanti@bosserv21
+  248  ssh diamanti@bosserv27
+  249  dcs
+  250  ssh diamanti@bosserv20
+  251  dctl -s 172.16.250.50 login -u admin -p Diamanti@111
+  252  ipmitool -H 172.16.250.7 -U admin -P admin1 chassis power status
+  253  ipmitool -H 172.16.250.7 -U admin -P admin1 chassis powercycle
+  254  ipmitool -H 172.16.250.7 -U admin -P admin1 chassis power cycle
+  255  dcs
+  256  dctl user group create 
+  257  #dctl user auth-server create ldap -S 172.16.17.6 --port 389 --base-dn 'DC=example,DC=com' --bind-dn 'CN=Administrator,CN=Users,DC=example,DC=com' --bind-password '111Market' --user-filter '(sAMAccountName=%s)' --enable
+  258  dctl user auth-server list 
+  259  dctl user auth-server create ldap -S 172.16.17.6 --port 389 --base-dn 'DC=example,DC=com' --bind-dn 'CN=Administrator,CN=Users,DC=example,DC=com' --bind-password '111Market' --user-filter '(sAMAccountName=%s)' --enable
+  260  dctl user delete auth-server
+  261  dctl user delete auth-server list 
+  262  #dctl user auth-server create myauth -S 172.16.17.6 --port 389 --base-dn 'CN=Users,DC=example,DC=com' --bind-dn 'CN=Administrator,CN=Users,DC=example,DC=com' --bind-password '111Market' --user-filter '(sAMAccountName=%s)' --group-filter '(sAMAccountName=%s)' --enable
+  263  dctl user auth-server create test1 -S 172.16.17.6 --port 389 --base-dn 'CN=Users,DC=example,DC=com' --bind-dn 'CN=Administrator,CN=Users,DC=example,DC=com' --bind-password '111Market' --user-filter '(sAMAccountName=%s)' --group-filter '(sAMAccountName=%s)' --enable
+  264  dctl user auth-server create test1 -S 172.16.17.6 --port 389 --base-dn 'CN=Users,DC=example,DC=com' --bind-dn 'CN=Administrator,CN=Users,DC=example,DC=com' --bind-password '111Market' --user-filter '(sAMAccountName=%s)'  --enable
+  265  dctl user auth-server list 
+  266  dctl user auth-server delete 
+  267  dctl user auth-server delete  ldap
+  268  dctl user auth-server list 
+  269  dctl user auth-server create test1 -S 172.16.17.6 --port 389 --base-dn 'CN=Users,DC=example,DC=com' --bind-dn 'CN=Administrator,CN=Users,DC=example,DC=com' --bind-password '111Market' --user-filter '(sAMAccountName=%s)'  --enable
+  270  dctl user auth-server list 
+  271  #dctl user auth-server create test2 -S 54.71.177.28 --port 389 --base-dn 'DC=in,DC=qa,DC=adexample,DC=com' --bind-dn 'CN=Admin,CN=Users,DC=in,DC=qa,DC=adexample,DC=com' --bind-password 'Diamanti@111' --user-filter '(sAMAccountName=%s)' --enable
+  272  dctl user auth-server create test2 -S 54.71.177.28 --port 389 --base-dn 'DC=in,DC=qa,DC=adexample,DC=com' --bind-dn 'CN=Admin,CN=Users,DC=in,DC=qa,DC=adexample,DC=com' --bind-password 'Diamanti@111' --user-filter '(sAMAccountName=%s)' --enable
+  273  #dctl user auth-server create test3 -S 35.162.251.145 --port 389 --base-dn 'DC=dev,DC=adexample,DC=com' --bind-dn 'CN=Admin,CN=Users,DC=dev,DC=adexample,DC=com' --bind-password 'Diamanti@111' --user-filter '(sAMAccountName=%s)' --enable
+  274  dctl user auth-server list 
+  275  dctl user auth-server create test3 -S 35.162.251.145 --port 389 --base-dn 'DC=dev,DC=adexample,DC=com' --bind-dn 'CN=Admin,CN=Users,DC=dev,DC=adexample,DC=com' --bind-password 'Diamanti@111' --user-filter '(sAMAccountName=%s)' --enable
+  276  dctl user auth-server list 
+  277  #dctl user group create group1 --role-list volume-edit
+  278  dctl user group create group1 --role-list volume-edit
+  279  dctl user group create group2 --role-list network-edit
+  280  dctl user group list
+  281  dctl user create aduser11 -g group2
+  282  dctl user create aduser202 -g group2
+  283  dctl user list
+  284  dctl login -u aduser202@in.qa.adexample.com -p 111Market
+  285  dctl login -u aduser11@example.com -p 111Market
+  286  dctl user list 
+  287  dctl cluster status
+  288  dctl -s 172.16.250.50 login -u admin -p Diamanti@111
+  289  dcs
+  290  dctl user list 
+  291  dctl user auth-server
+  292  dctl user auth-server list 
+  293  dctl login -u  aduser202@in.adexample.com -p 111Market
+  294  whoami
+  295  dctl login -u  aduser202 -p 111Market
+  296  whoami
+  297  dctl usewr list 
+  298  dctl user list 
+  299  whoami
+  300  dctl user  --help 
+  301  dctl whoami
+  302  dctl -s 172.16.250.50 login -u admin -p Diamanti@111
+  303  dcs
+  304  dctl user auth-server list 
+  305  dctl user list 
+  306  dctl user create group --help
+  307  dctl create group 
+  308  dctl user create 
+  309  dctl user group create 
+  310  dctl user group create  adgroup202 --role-list network-view,container-edit/mynamespace --external-group adgroup202@in.qa.adexample.com
+  311  dctl login 
+  312  dctl whoami
+  313  dctl login -u aduser203@in.qa.adexample.com -p 111Market
+  314  dctl whoami
+  315  dctl -s 172.16.250.50 login -u admin -p Diamanti@111
+  316  dctl user list 
+  317  dctl user auth-server3
+  318  dctl user auth-server list 
+  319  ls
+  320  dctl whoami
+  321  exit
+  322  dcs
+  323  dctl -s 172.16.250.50 login -u admin -p Diamanti@111
+  324  dcs
+  325  ls
+  326  cd tanya/diamanti-test-pkg/qa_tb/
+  327  ls
+  328  cp boston_mz_inventory.json boston_mz_inventory_5node.json
+  329  vi boston_mz_inventory_5node.json 
+  330  cd ../bin/
+  331  ls
+  332  ./burnTest sysValidate --tb ../qa_tb/boston_mz_inventory_5node.json  --create-cluster --multi-zone
+  333  dcs
+  334  dctl endpoint list 
+  335  dcs
+  336  dctl
+  337  dctl login -u admin -p Diamanti@111
+  338  dctl
+  339  #
+  340  dctl user group create yogeshgrp --role-list container-edit/vishals,volumeclaim-edit/vishals,network-edit,node-edit,user-view,required,perftier-edit,volume-edit
+  341  dctl user create yogesh --local-auth --password Yogesh@123 --group-list yogeshgrp
+  342  dctl login -u yogesh -p Yogesh@123
+  343  echo $DCTL_CONFIG
+  344  dctl login -u admin -p Diamanti@111
+  345  echo $DCTL_CONFIG
+  346  echo DCTL_CONFIG
+  347  cat .dctl.d/config 
+  348  dctl login -u yogesh -p Yogesh@123
+  349  cat .dctl.d/config 
+  350  cat $HOME
+  351  $HOME
+  352  echo  $HOME
+  353  mkdir $HOME/yogesh
+  354  export DCTL_CONFIG=$HOME/vishal
+  355  export KUBECONFIG=$HOME/vishal/.dctl.d/kubeconfig
+  356  dctl -s 172.16.250.50
+  357  dctl -s 172.16.250.50 -u yogesh -p Yogesh@123
+  358  dctl -s 172.16.250.50 login -u yogesh -p Yogesh@123
+  359  echo $DCTL_CONFIG
+  360  export DCTL_CONFIG=$HOME/yogesh
+  361  echo $DCTL_CONFIG
+  362  export KUBECONFIG=$HOME/yogesh/.dctl.d/kubeconfig
+  363  echo $KUBECONFIG
+  364  dctl -s 172.16.250.50 login -u yogesh -p Yogesh@123
+  365  cat $DCTL_CONFIG
+  366  cat \$DCTL_CONFIG/.dctl.d 
+  367  cd \$DCTL_CONFIG/.dctl.d 
+  368  cd $DCTL_CONFIG
+  369  ls
+  370  ls -a
+  371  vim .dctl.d/config 
+  372  cd
+  373  ls
+  374  dctl whoami
+  375  dctl login -u admin -p Diamanti@111
+  376  dctl whoami
+  377  #dctl user group create vishalsgroup --role-list container-edit/vishals,volumeclaim-edit/vishals,network-edit,node-edit,user-view,required,perftier-edit,volume-edit
+  378  dctl user group create samikshagrp --role-list container-edit/samikshas,volumeclaim-edit/samikshas,network-edit,node-edit,user-view,required,perftier-edit,volume-edit
+  379  dctl user create samiksha --local-auth --password Samiksha@123 --group-list samikshagrp
+  380  dctl login -u samiksha -p Samiksha@123
+  381  mkdir $HOME/samiksha
+  382  export DCTL_CONFIG=$HOME/samiksha
+  383  export KUBECONFIG=$HOME/samiksha/.dctl.d/kubeconfig
+  384  dctl -s 172.16.250.50 login -u samiksha -p Samiksha@123
+  385  dctl whoami
+  386  dctl cluster status
+  387  dctl volume create fio-vol1 -s 20Gi
+  388  dctl volume list
+  389  dctl -s 172.16.250.50 login -u yogesh -p Yogesh@123
+  390  dctl volume list
+  391  dctl whoami
+  392  ls
+  393  dctl cluster status
+  394  ls
+  395  cd $HOME
+  396  ls
+  397  rm -rf yogesh/ samiksha/
+  398  ls
+  399  #rm -rf yogesh/ samiksha/
+  400  dctl 
+  401  ls
+  402  exit
+  403  dctl login -u admin -p Diamanti@111
+  404  # dctl user group create dikshasgroup --role-list container-edit/dikshas,volumeclaim-edit/dikshas,network-edit,node-edit,user-view,required,perftier-edit,volume-edit
+  405  exit
+  406   dctl login -u admin -p Diamanti@111
+  407  dctl user group create samikshasgroup --role-list container-edit/samikshas,volumeclaim-edit/samikshas,network-edit,node-edit,user-view,required,perftier-edit,volume-edit
+  408  dctl user create samiksha --local-auth --password Samiksha@44 --group-list samikshasgroup
+  409  dctl user create samiksha1 --local-auth --password Samiksha@44 --group-list samikshasgroup
+  410  mkdir $HOME/samiksha
+  411  export DCTL_CONFIG=$HOME/samiksha
+  412  export KUBECONFIG=$HOME/samiksha/.dctl.d/kubeconfig
+  413  dctl -s 172.16.250.50 login -u samiksha1 -p Samiksha@44
+  414  dctl whoami
+  415  ls
+  416  kubectl get pods
+  417  kubectl get nodes
+  418  exit
+  419  dctl -s 172.16.250.50 login -u samiksha1 -p Samiksha@44
+  420  exit
+  421  dctl whoami
+  422  exit
+  423  dctl whoami
+  424  dctl -s 172.16.250.50 login -u samiksha1 -p Samiksha@44
+  425  exit
+  426  dctl login -u admin -p Diamanti@111
+  427  # dctl user group create dikshasgroup --role-list container-edit/dikshas,volumeclaim-edit/dikshas,network-edit,node-edit,user-view,required,perftier-edit,volume-edit
+  428  dctl user group create dikshasgroup --role-list container-edit/dikshas,volumeclaim-edit/dikshas,network-edit,node-edit,user-view,required,perftier-edit,volume-edit
+  429  # dctl user create diksha --local-auth --password Diksha@123 --group-list dikshasgroup
+  430  dctl user create diksha --local-auth --password Diksha@123 --group-list dikshasgroup
+  431  mkdir $HOME/diksha
+  432  #export DCTL_CONFIG=$HOME/diksha
+  433  export DCTL_CONFIG=$HOME/diksha
+  434  #export KUBECONFIG=$HOME/diksha/.dctl.d/kubeconfig
+  435  export KUBECONFIG=$HOME/diksha/.dctl.d/kubeconfig
+  436  #dctl -s 172.16.250.50 login -u diksha -p Diksha@123
+  437  dctl -s 172.16.250.50 login -u diksha -p Diksha@123
+  438  dctl whoami
+  439  ls
+  440  dctl volume list
+  441  dctl whoami
+  442  dctl
+  443  kubectl 
+  444  docekr
+  445  docker
+  446  exit
+  447  dctl -s 172.16.250.50 login -u samiksha1 -p Samiksha@44
+  448  ls
+  449  cd samiksha/
+  450  ls
+  451  cd
+  452  cd diksha/
+  453  ls
+  454  cd ..
+  455  cd samiksha/.dctl.d/
+  456  cd
+  457  cd samiksha/
+  458  la
+  459  ls
+  460  kubectl get nodes
+  461  dctl whoami
+  462  #dctl volume create fio-vol1 -s 20Gi
+  463  dctl cluster status
+  464  dctl volume create fio-vol1 -s 20Gi
+  465  dctl volume list
+  466  dctl volume delete fio-vol1
+  467  dctl volume list
+  468  dctl volume create fio-vol1 -s 20Gi
+  469  dctl whoami
+  470  dctl volume delete fio-vol1
+  471  dctl volume list
+  472  ls
+  473  cd
+  474  ls
+  475  cd samiksha/
+  476  ls
+  477  docker images
+  478  docker image
+  479  docker
+  480  mkdir docker-demo
+  481  cd docker-demo
+  482  ls
+  483  mkdir demo1
+  484  cd demo1
+  485  gedit Dockerfile
+  486  vim
+  487  vim Dockerfile
+  488  cat Dockerfile 
+  489  vim Dockerfile
+  490  cat Dockerfile 
+  491  LS
+  492  ls
+  493  exit
+  494  ls
+  495  ifcnfig
+  496  ifconfig
+  497  ls
+  498  dctl -s 172.16.250.50 login -u samiksha1 -p Samiksha@44
+  499  ls
+  500  dctl whomi
+  501  dctl whoami
+  502  mv te_main /home/diamanti/samiksha/
+  503  ls
+  504  cd samiksha/
+  505  ls
+  506  mv te_main /home/diamanti/samiksha/docker-demo/demo1/
+  507  ls
+  508  cd docker-demo/demo1/
+  509  ls
+  510  vim sserv.json
+  511  exit
+  512  ls
+  513  ssh diamanti@bosserv20
+  514  #dctl user group create  adgroup202 --role-list network-view,container-edit/mynamespace --external-group adgroup202@in.qa.adexample.com
+  515  ssh diamanti@bosserv20
+  516  ssh bosserv25
+  517  #dctl user group create  adgroup202 --role-list network-view,container-edit/mynamespace --external-group adgroup202@in.qa.adexample.com
+  518  ssh diamanti@bosserv20
+  519  ssh diamanti@bosserv1
+  520  ssh bosserv1
+  521  ssh bosserv2
+  522  ssh diamanti@bosserv1
+  523  dctl
+  524  dctl cluster status
+  525  exit
+  526  ssh diamanti@bosserv20
+  527  ls
+  528  dctl whoami
+  529  dctl -s 172.16.250.50 login -u samiksha1 -p Samiksha@44
+  530  dctl whoami
+  531  kubectl get pods
+  532  kubectl get nodes
+  533  exit
+  534  ls
+  535  dctl whoami
+  536  dctl cluster status
+  537  dctl node status
+  538  dctl cluster status
+  539  kpg
+  540  dctl cluster status
+  541  dvl
+  542  kpg
+  543  ping testserver3
+  544  ls
+  545  cd demo/
+  546  ls
+  547  cd storage/
+  548  l
+  549  sls
+  550  ls
+  551  cd ..
+  552  ls
+  553  cp -R demo/ /home/diamanti/samiksha/
+  554  ls
+  555  dctl whoami
+  556  cd samiksha/
+  557  ls
+  558  mv demo/ volume-demo
+  559  ls
+  560  cd volume-demo/
+  561  ls
+  562  cd storage/
+  563  ls
+  564  dvl
+  565  kubectl create -f pvc-local.json 
+  566  dvl
+  567  kubectl
+  568  kubectl get --help
+  569  kubectl get volume list
+  570  dctl get volume list
+  571  kubectl get pods
+  572  kubectl get pv
+  573  kubectl get pvc
+  574  ls
+  575  kubectl delete -f pvc-local.json 
+  576  kubectl get pvc
+  577  dctl cluster status
+  578  kubectl create -f sc-local.json 
+  579  kubectl get pv
+  580  dctl volume list
+  581  kubectl create -f pvc-local.json 
+  582  kubectl get pv
+  583  kubectl get pvc
+  584  dctl cluster status
+  585  ls
+  586  kpg
+  587  kgp
+  588  kubectl create -f podspec-local.json 
+  589  kgp
+  590  kubectl exec -it --bash fio-local
+  591  kgp
+  592  dctl cluster status
+  593  dctl volume list
+  594  kubectl delete 
+  595  kubectl delete  -f podspec-local.json 
+  596  kpg
+  597  kgp
+  598  kubectl get pv
+  599  kubectl whoami
+  600  dctl whoami
+  601  kubectl get pvc
+  602  kubectl delete -f sc-
+  603  kubectl delete -f sc-local.json 
+  604  kubectl delete -f pvc-local.json 
+  605  exit
+  606  dctl -s 172.16.250.50 login -u diksha -p Diksha@123
+  607  ls
+  608  cd diksha/
+  609  ls
+  610  cd
+  611  cd samiksha/
+  612  ls
+  613  cd docker-demo/
+  614  ls
+  615  cd demo1/
+  616  ls
+  617  cd
+  618  ls
+  619  cd diksha/
+  620  ls
+  621  cd
+  622  find path
+  623  pwd
+  624  cd diksha/
+  625  pwd
+  626  cd
+  627  cd samiksha/
+  628  cd\
+  629  cd
+  630  kubectl get pod
+  631  cd samiksha/
+  632  ls
+  633  cd volume-demo/
+  634  ls
+  635  cd network/
+  636  ls
+  637  cd
+  638  ls
+  639  cd demo/
+  640  ls
+  641  cd snapshot/
+  642  ls
+  643  cp snapshotdata.yaml /home/diamanti/diksha/
+  644  cp snapshot-restore.json /home/diamanti/diksha/
+  645  cp snapshot.yaml /home/diamanti/diksha/
+  646  cd..
+  647  cd .. 
+  648  ls
+  649  cd
+  650  cd diksha/
+  651  ls
+  652  mkdir snapshot
+  653  cd snapshot/
+  654  pwd
+  655  cd ..
+  656  mkdir network
+  657  mkdir storage
+  658  mkdir nfs
+  659  mkdir iscsi
+  660  mkdir deployment
+  661  ls
+  662  cp snapshotdata.yaml /home/diamanti/diksha/snapshot
+  663  cp snapshot-restore.json /home/diamanti/diksha/snapshot
+  664  cp snapshot.yaml /home/diamanti/diksha/snapshot
+  665  cd snapshot/
+  666  ls
+  667  cd ..
+  668  rm snapshot.yaml 
+  669  rm snapshot-restore.json 
+  670  rm snapshotdata.yaml 
+  671  ls
+  672  dcs
+  673  dctl -s 172.16.250.50 login -u diksha -p Diksha@123
+  674  dcs
+  675  kgp --all-namespaces
+  676  ls
+  677  dctl -v 
+  678  cd tanya/diamanti-test-pkg/bin/
+  679  #./burnTest sysValidate --tb ../qa_tb/boston_mz_inventory_5node.json --rpm ../../../diamanti-cx-2.2.0-76.x86_64.rpm --install-method install --create-cluster --multi-zone
+  680  ./burnTest sysValidate --tb ../qa_tb/boston_mz_inventory_5node.json --rpm ../../../diamanti-cx-2.2.0-76.x86_64.rpm --install-method install --create-cluster --multi-zone
+  681  dcs
+  682  dctl network list 
+  683  ./burnTest sysValidate --tb ../qa_tb/boston_mz_inventory_5node.json  --create-cluster --multi-zone
+  684  dcs
+  685  ssh diamanti@bosserv21
+  686  dctl network create --help
+  687  cd tanya/diamanti-test-pkg/bin/
+  688  ./burnTest sysValidate --tb ../qa_tb/boston_mz_inventory_5node.json  --create-cluster --multi-zone
+  689  dcs
+  690  cd ../scripts/utils/
+  691  ls
+  692  ./stress_test.sh 
+  693  nohup ./stress_test.sh -vip 172.16.250.50 -cfgfile ../../sample_specs/cfg-stress-32-storage-ctrls.json > stress11-7.txt &
+  694  tail -f stress11-7.txt 
+  695  dcs
+  696  dctl network list
+  697   vi tanya/diamanti-test-pkg/qa_tb/boston_mz_inventory_5node.json 
+  698  ls
+  699  cd bharati/
+  700  ls
+  701  cd diamanti-test-pkg/scripts/utils/
+  702  ls
+  703  cd diamanti/
+  704  ls
+  705  cd ..
+  706  cd 
+  707  cd tanya/diamanti-test-pkg/sample_specs/
+  708  ls
+  709  vi cfg-stress-32-storage-ctrls.json
+  710  vi iperf-client.json
+  711  vi ../qa_tb/boston_mz_inventory_5node.json 
+  712  vi iperf-client.json
+  713  vi iperf-server.json
+  714  vi cfg-stress-32-storage-ctrls.json
+  715  vi ../qa_tb/boston_mz_inventory_5node.json 
+  716  vi cfg-stress-32-storage-ctrls.json
+  717  dcs
+  718  kgp
+  719  kubectl describe pod fio-qmedium-3
+  720  dcs
+  721  kgp | grep -v Running 
+  722  kubectl delete pod --all
+  723  dvl 
+  724  delVol
+  725  adduser
+  726  sudo adduser
+  727  sudo adduser -u yogesh
+  728  addusr -u yogesh
+  729  adduser yogesh
+  730  sudo adduser yogesh
+  731  sudo passwd yogesh5678!
+  732  sudo passwd yogesh
+  733  exit
+  734  ls
+  735  dctl 
+  736  vim .bashrc 
+  737  ls
+  738  vim vishal.tmux.conf 
+  739  dctl cluster status
+  740  ls
+  741  dctl 
+  742  dctl node label -h
+  743  ls
+  744  exit
+  745  sudo vi /etc/hosts
+  746  ssh bosserv4
+  747  ssh bosserv20
+  748  ssh bosserv28
+  749  ssh bosserv27
+  750  ping 172.16.250.3
+  751  ping 172.16.250.2
+  752  vim cp.sh
+  753  for i in {2,4,6,8,10,12,14,16}; do echo $i; done
+  754  #for i in {2,4,6,8,10,12,14,16}; do scp ; done
+  755  ls
+  756  ls -ltr
+  757  #for i in {2,4,6,8,10,12,14,16}; do scp diamanti-ocx-2.1.0-550.x86_64.rpm diamanti@172.16.250.$i ; done
+  758  for i in {2,4,6,8,10,12,14,16}; do scp diamanti-ocx-2.1.0-550.x86_64.rpm diamanti@172.16.250.$i ; done
+  759  for i in {2,4,6,8,10,12,14,16}; do scp diamanti-ocx-2.1.0-550.x86_64.rpm diamanti@172.16.250.$i: ; done
+  760  ssh diamanti@172.16.250.2
+  761  ifconfig 
+  762  ssh diamanti@172.16.250.16
+  763  ls
+  764  cd samiksha/
+  765  ls
+  766  cd volume-demo/
+  767  ls
+  768  cd storage/
+  769  ls
+  770  cat sc-local.json 
+  771  ls
+  772  cat pvc-local.json 
+  773  ls
+  774  exit
+  775  ls
+  776  ls -ltrh
+  777  less diamanti@172.16.250.2
+  778  rm diamanti@172.16.250.*
+  779  ls -ltrh
+  780  ls
+  781  ls samiksha/
+  782  ls
+  783  ssh-keygen 
+  784  #for host in ocpserv2.eng.diamanti.com ocpserv3.eng.diamanti.com ocpserv4.eng.diamanti.com ocpserv5.eng.diamanti.com; do ssh-copy-id -i ~/.ssh/id_rsa.pub $host; done
+  785  for host in ocpserv2.eng.diamanti.com ocpserv3.eng.diamanti.com ocpserv4.eng.diamanti.com ocpserv5.eng.diamanti.com; do ssh-copy-id -i ~/.ssh/id_rsa.pub $host; done
+  786  #for host in ocpserv2.eng.diamanti.com ocpserv3.eng.diamanti.com ocpserv4.eng.diamanti.com ocpserv5.eng.diamanti.com; do ssh-copy-id -i ~/.ssh/id_rsa.pub $host; done
+  787  for host in diamanti@ocpserv2 ; do ssh-copy-id -i ~/.ssh/id_rsa.pub $host; done
+  788  ssh diamanti@ocpserv2
+  789  for host in diamanti@ocpserv3 diamanti@ocpserv4 diamanti@ocpserv5; do ssh-copy-id -i ~/.ssh/id_rsa.pub $host; done
+  790  ssh diamanti@ocpserv2 ls
+  791  ssh diamanti@ocpserv2 ls -ltrh
+  792  for host in diamanti@ocpserv6 diamanti@ocpserv7 diamanti@ocpserv8 diamanti@ocpserv9; do ssh-copy-id -i ~/.ssh/id_rsa.pub $host; done
+  793  for host in  diamanti@ocpserv8 diamanti@ocpserv9; do ssh-copy-id -i ~/.ssh/id_rsa.pub $host; done
+  794  ls
+  795  for host in diamanti@ocpserv2 diamanti@ocpserv3
+  796  for host in diamanti@ocpserv2 diamanti@ocpserv3 diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; done
+  797  ssh ocpserv2
+  798  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; echo diamanti; done
+  799  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do sshpass -pdiamanti ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; echo diamanti; done
+  800  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do sshpass -pdiamanti ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; expect "*?assword:" { send "diamanti"}; done
+  801  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do  ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; expect "*?assword:" { send "diamanti"}; done
+  802  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do  ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111 diamanti; done
+  803  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do  spawn ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111 diamanti; done
+  804  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do  ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; expect "*?assword:*"; send -- "diamanti\r";  done
+  805  ls
+  806  vi passwordless_rhsm_registration.sh
+  807  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do  ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; expect "*?assword:*"; send -- "diamanti\r";  done
+  808  vi passwordless_rhsm_registration.sh
+  809  for host in  diamanti@ocpserv3  diamanti@ocpserv4 diamanti@ocpserv5 diamanti@ocpserv6 diamanti@ocpserv8 diamanti@ocpserv9; do  ssh $host subscription-manager register --username=engineering@diamanti.com --password=Diamanti@111; expect "*?assword:*"; send -- "diamanti\r";  done
+  810  vi passwordless_rhsm_registration.sh
+  811  chmod -x passwordless_rhsm_registration.sh 
+  812  ls -l
+  813  chmod =x passwordless_rhsm_registration.sh 
+  814  chmod +x passwordless_rhsm_registration.sh 
+  815  chmod =x passwordless_rhsm_registration.sh 
+  816  chmod +x passwordless_rhsm_registration.sh 
+  817  ls -l
+  818  chmod +rw passwordless_rhsm_registration.sh 
+  819  ls -l
+  820  ./passwordless_rhsm_registration.sh 
+  821  vi passwordless_rhsm_registration.sh
+  822  ./passwordless_rhsm_registration.sh 
+  823  vi passwordless_rhsm_registration.sh
+  824  ./passwordless_rhsm_registration.sh 
+  825  vi passwordless_rhsm_registration.sh
+  826  ./passwordless_rhsm_registration.sh 
+  827  vi passwordless_rhsm_registration.sh
+  828  ./passwordless_rhsm_registration.sh 
+  829  vi passwordless_rhsm_registration.sh
+  830  ./passwordless_rhsm_registration.sh 
+  831  vi passwordless_rhsm_registration.sh
+  832  ./passwordless_rhsm_registration.sh 
+  833  vi passwordless_rhsm_registration.sh
+  834  ./passwordless_rhsm_registration.sh 
+  835  vi passwordless_rhsm_registration.sh
+  836  ./passwordless_rhsm_registration.sh 
+  837  vi passwordless_rhsm_registration.sh
+  838  ./passwordless_rhsm_registration.sh 
+  839  ls
+  840  ssh ocpserv3
+  841  ssh ocpserv2
+  842  ssh ocpserv4
+  843  ssh ocpserv5
+  844  ping 172.16.250.12
+  845  ls
+  846  ping 10.168.251.3
+  847  ssh ocpserv2
+  848  #for i in {2..9}; do scp 
+  849  ls
+  850  #for i in {2..9}; do scp diamanti-ocx-2.1.0-543.x86_64.rpm
+  851  ls -ltrh
+  852  for i in {2..9}; do scp diamanti-ocx-2.1.0-543.x86_64.rpm ocpserv$i:~/; done
+  853  ssh-copy-id ocpserv7
+  854  ssh ocpserv7
+  855  ls 
+  856  sudo rmp -ivh diamanti-ocx-2.1.0-543.x86_64.rpm 
+  857  sudo rpm -ivh diamanti-ocx-2.1.0-543.x86_64.rpm 
+  858  ls
+  859  ssh ocpserv2
+  860  ssh ocpserv4
+  861  ssh ocpserv5
+  862  oc 
+  863  oc get po
+  864  oc get pods
+  865  ssh ocpserv2
+  866  exit
+  867  ssh ocpserv3
+  868  exit
+  869  ls
+  870  ls ../yatish
+  871  pwd
+  872  ./collect_oc_techsupport.sh 
+  873  ssh ocpserv2
+  874  ssh ocpserv3
+  875  ./collect_oc_techsupport.sh -n ocpserv2 ocpserv3 ocpserv4 ocpserv5
+  876  oc get nodes
+  877  scp root@ocpserv2:/root/.kube/config ~/.kube/config
+  878  oc get nodes
+  879  ssh root@ocpserv2
+  880  ls
+  881  rm -rf diamanti
+  882  cat passwordless_rhsm_registration.sh 
+  883  cp bharati/diamanti-test-pkg/scripts/utils/set_passwordless_ssh.sh .
+  884  ./set_passwordless_ssh.sh -h ocpserv2 -u root -p diamanti
+  885  ./set_passwordless_ssh.sh -h ocpserv3 -u root -p diamanti
+  886  ./set_passwordless_ssh.sh -h ocpserv4 -u root -p diamanti
+  887  ./set_passwordless_ssh.sh -h ocpserv5 -u root -p diamanti
+  888  cat collect_oc_techsupport.sh 
+  889  ./set_passwordless_ssh.sh -h ocpserv5 -u root -p diamanti
+  890  ./collect_oc_techsupport.sh -n ocpserv2 ocpserv3 ocpserv4 ocpserv5
+  891  ls
+  892  cd /home/diamanti/diamanti/2019-07-19T05-07-53
+  893  ls
+  894  tar -xvf pod_description_and_logs.tar.gz pod_description_and_logs.tar.gz 
+  895  ls
+  896  tar -xvf pod_description_and_logs.tar.gz 
+  897  ls
+  898  cd pod_description_and_logs/
+  899  ls
+  900  cd 
+  901  mkdir techsupport
+  902  ls
+  903  cd techsupport/
+  904  pwd
+  905  cd
+  906  ls
+  907  mv ocpserv3-oc-tech-support-2019.07.19-05.36.57.tar.gz /home/diamanti/techsupport/
+  908  cd techsupport/
+  909  ls
+  910  oc-tech-support-2019.07.19-05.34.26.tar.gz
+  911  ls
+  912  cd ..
+  913  ls
+  914  tar -zcvf techsupport.tar.gz /home/diamanti/techsupport/
+  915  ls
+  916  ping vagserv1
+  917  ssh vagserv1
+  918  ping vagserv1
+  919  ping 172.16.6.231
+  920  ping 8.8.8.8
+  921  ping google.com
+  922  ls
+  923  pwd
+  924  cd techsupport/
+  925  ls
+  926  cd ..
+  927  ls
+  928  scp techsupport.tar.gz diamanti@vagserv1:/home/diamanti/samiksha/
+  929  scp techsupport.tar.gz diamanti@vagserv3:/home/diamanti/samiksha/
+  930  sl
+  931  ls
+  932  ssh ocpserv1
+  933  ssh ocpserv2
+  934  ssh ocpserv3
+  935  ssh ocpserv4
+  936  ssh ocpserv5
+  937  ssh ocpserv6
+  938  ssh ocpserv7
+  939  ssh ocpserv8
+  940  ssh ocpserv3
+  941  ssh 172.16.250.4
+  942  exi
+  943  exit
+  944  ls
+  945  mv techsupport/ /home/diamanti/samiksha/
+  946  ls
+  947  mv techsupport.tar.gz /home/diamanti/samiksha/
+  948  ls
+  949  cd main/
+  950  ls
+  951  lsl
+  952  cd ..
+  953  exit
+  954  ls
+  955  cd main/.git/
+  956  cd
+  957  cd main/
+  958  ls
+  959  cd ..
+  960  exit
+  961  wget http://bldserv1:8080/job/Openshift-GA-2.1.0/lastSuccessfulBuild/artifact/artifacts/test/diamanti-test-pkg.tar.gz
+  962  exit
+  963  ls
+  964  mkdir diamantiTest
+  965  mkdir diamantiOCX
+  966  mv diamanti-ocx-2.1.0-5* diamantiOCX/
+  967  ls
+  968  mv diamanti-test-pkg.tar.gz diamantiTest/
+  969  ls
+  970  scp diamantiTest/diamanti-test-pkg.tar.gz diamanti@ocpserv6:~/
+  971  ping 10.168.251.2
+  972  ls
+  973  cd diamantiTest/
+  974  ls
+  975  scp diamanti-test-pkg.tar.gz diamanti@10.168.251.2:/.
+  976  scp diamanti-test-pkg.tar.gz diamanti@10.168.251.2:~/.
+  977  ssh ocpserv2
+  978  cd ..
+  979  ls
+  980  cd samiksha/
+  981  ls
+  982  exit
+  983  ls
+  984  exit
+  985  ls
+  986  cd diamanti
+  987  cd ..
+  988  cd diamanti-test-pkg/
+  989  ls
+  990  cd ..
+  991  ssh openserv6
+  992  ssh ocpserv6
+  993  scp -r diamanti-test-pkg/ diamanti@192.168.252.6:~/.
+  994  ssh ocpserv6
+  995  scp -r diamanti-test-pkg/ diamanti@10.168.251.2:~/.
+  996  exit
+  997  ls
+  998  cd diamantiTest/
+  999  ls
+ 1000  exit
+ 1001  oc
+ 1002  oc get pods
+ 1003  oc get nodes
+ 1004  ls
+ 1005  which oc
+ 1006  sudo mv oc /usr/bin/
+ 1007  oc get nodes
+ 1008  mkdir temp
+ 1009  sudo mv temp/* /usr/bin/
+ 1010  ls
+ 1011  ls temp/
+ 1012  history 
